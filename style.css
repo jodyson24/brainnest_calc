@@ -61,7 +61,7 @@ body {
     display: flex;
 }
 .equals-btn {
-    width: calc(300px / 2);
+    width: calc(300px / 4);
     padding: 15px 0px;
     font-size: 18px;
     font-weight: 700;
