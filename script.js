@@ -20,7 +20,14 @@ btn.addEventListener('click', e => {
         }
 
         if (action === 'decimal') {
-            resultScreen.textContent = displayedNumber + '.'
+            // resultScreen.textContent = displayedNumber + '.'
+            if (!displayedNumber.includes('.')) {
+                resultScreen.textContent = displayedNumber + '.'
+            } else if (prevKeyType === 'operator') {
+                resultScreen.textContent = '0.'
+            }
+
+            calculator.dataset.prevKeyType = 'decimal'
         }
 
         if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
@@ -45,10 +52,11 @@ btn.addEventListener('click', e => {
             calculator.dataset.prevKeyType = 'clear'
         }
 
-        if(action === 'percentage') {
+        if (action === 'percentage') {
             const number = resultScreen.textContent / 100
             resultScreen.textContent = number
         }
+
     }
 })
 
